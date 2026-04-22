@@ -1,9 +1,9 @@
 ---
-name: zero-object-generator
-description: Generate a Nano Banana 2 (NB2) prompt for a 3D single-object render in the Zero visual language (Y2K consumer-electronics × designer-object × quiet-personality aesthetic — chunky, translucent-jelly, Y2K-labeled, with a face baked into each object). ONLY trigger this skill when the user explicitly invokes it by name — e.g., says "zero object", "zero object generator", "make a zero object", "render this as a zero object", or calls it as a named / slash command. Do NOT trigger on generic requests like "render an object", "make a 3D render", "write an NB2 prompt", "do it in Y2K style", "do it in our style", reference-image renders, or concept-to-visual briefs, unless the user specifically names "zero object". This is a deliberately narrow trigger — when in doubt, do not trigger.
+name: zero-object-prompt-generator
+description: Generate a Nano Banana 2 (NB2) prompt for a 3D single-object render in the Zero visual language (Y2K consumer-electronics × designer-object × quiet-personality aesthetic — chunky, translucent-jelly, Y2K-labeled, with a face baked into each object). ONLY trigger this skill when the user explicitly invokes it by name — e.g., says "zero object", "zero object prompt generator", "zero object generator", "make a zero object", "render this as a zero object", or calls it as a named / slash command. Do NOT trigger on generic requests like "render an object", "make a 3D render", "write an NB2 prompt", "do it in Y2K style", "do it in our style", reference-image renders, or concept-to-visual briefs, unless the user specifically names "zero object". This is a deliberately narrow trigger — when in doubt, do not trigger.
 ---
 
-# Zero Object Generator
+# Zero Object Prompt Generator
 
 Generates NB2 prompts for 3D single-object renders in a specific Y2K consumer-electronics aesthetic. Every render produced by this skill should feel:
 
@@ -20,9 +20,9 @@ Generates NB2 prompts for 3D single-object renders in a specific Y2K consumer-el
 Trigger when the user says any of:
 
 - *"zero object"* / *"a zero object"* / *"make a zero object"*
-- *"zero object generator"* / *"use the zero object generator"*
+- *"zero object prompt generator"* / *"zero object generator"* / *"use the zero object prompt generator"*
 - *"render this as a zero object"* / *"do this as a zero object"*
-- A slash/command-style invocation (e.g., `/zero-object`, `@zero-object-generator`)
+- A slash/command-style invocation (e.g., `/zero-object`, `/zero-object-prompt-generator`, `@zero-object-prompt-generator`)
 - Any phrasing where "zero object" appears as the named thing being requested
 
 **Do NOT trigger** on any of these, even though they sound related:
@@ -34,7 +34,7 @@ Trigger when the user says any of:
 - Reference-image-plus-render requests
 - Concept-to-visual briefs (*"hero image for empty state"*, *"visual for trust"*)
 
-If the user clearly wants a render in this aesthetic but hasn't named "zero object," prefer to ask them explicitly whether they want to invoke the zero-object-generator rather than silently triggering it. Undertrigger is the desired behavior.
+If the user clearly wants a render in this aesthetic but hasn't named "zero object," prefer to ask them explicitly whether they want to invoke the zero-object-prompt-generator rather than silently triggering it. Undertrigger is the desired behavior.
 
 ## Workflow
 

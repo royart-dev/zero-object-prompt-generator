@@ -1,4 +1,4 @@
-# Zero Object Generator
+# Zero Object Prompt Generator
 
 A Claude skill for generating [Nano Banana 2](https://deepmind.google/technologies/nano-banana/) (NB2) prompts that produce 3D single-object renders in a specific aesthetic: **Y2K consumer-electronics × designer-object × quiet personality.**
 
@@ -26,10 +26,10 @@ Drop the repo into your Claude skills directory:
 
 ```bash
 # Example on macOS/Linux
-git clone https://github.com/RoyWilder/zero-object-generator.git ~/.claude/skills/zero-object-generator
+git clone https://github.com/royart-dev/zero-object-prompt-generator.git ~/.claude/skills/zero-object-prompt-generator
 
 # Example on Windows
-git clone https://github.com/RoyWilder/zero-object-generator.git %USERPROFILE%\.claude\skills\zero-object-generator
+git clone https://github.com/royart-dev/zero-object-prompt-generator.git %USERPROFILE%\.claude\skills\zero-object-prompt-generator
 ```
 
 Claude will auto-discover `SKILL.md` and invoke the skill whenever the trigger conditions in the frontmatter match.
@@ -40,20 +40,27 @@ If you're not using Claude Code, you can still use the skill content directly �
 
 ## Usage
 
-Once installed, just ask Claude to render something in the style:
+The skill fires only on **explicit invocation** — it does NOT auto-trigger on generic render, NB2, Y2K, "our style," or reference-image requests. This is deliberate; undertriggering is the preferred failure mode.
 
-- *"Render a walkie-talkie in our style."* (Mode A — named object)
-- *"I need a hero image for the empty search state."* (Mode B — concept)
-- *"Here's a reference image, do it our way."* (Mode C — reference image)
+Ways to invoke:
 
-The skill auto-triggers on NB2 / Nano Banana 2 / Y2K / iMac G3 / "our style" / jelly shell / translucent polycarbonate / reference-image-plus-render-request.
+- *"Make me a zero object for the course card."*
+- *"Use the zero object prompt generator on this reference image."*
+- *"Render this as a zero object."*
+- `/zero-object-prompt-generator` (or `/zero-object` as a short form)
+
+Once invoked, the skill handles three input modes:
+
+- **Mode A (named object)**: *"Make a zero object walkie-talkie."*
+- **Mode B (concept)**: *"I need a zero object for the empty search state."*
+- **Mode C (reference image)**: *"Zero-object this reference."* (attach image)
 
 Output is a single paste-ready NB2 prompt per object.
 
 ## What's inside
 
 ```
-zero-object-generator/
+zero-object-prompt-generator/
 ├── SKILL.md                      # entry point — when to trigger, workflow, failure modes
 ├── references/
 │   ├── rules.md                  # absolute rules + 6-layer prompt structure + closing block
